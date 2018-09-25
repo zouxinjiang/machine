@@ -43,7 +43,6 @@ type Machine struct {
 	tmpl map[string]string
 	port string
 	to []string
-
 }
 
 func NewMachine(url string) Machine{
@@ -130,9 +129,9 @@ func (m *Machine) GenerateTmpl(msgType machine.MsgType, data map[string]interfac
 	return tpl,curerr
 }
 
-func (m * Machine) Login(data map[string]string) error {
-	m.username = data["username"]
-	m.password = data["password"]
+func (m * Machine) Login(username,password,loginurl string,datas ...string) error {
+	m.username = username
+	m.password = password
 	m.auth = smtp.PlainAuth("",m.username,m.password,m.host)
 	return nil
 }

@@ -133,7 +133,7 @@ func NewMachine(url string) *Machine{
 		prefixVar:"$",
 	}
 }
-func (m Machine)Login(data map[string]string) error{
+func (m Machine)Login(username,password,loginurl string,datas ...string) error{
 	return nil
 }
 func (m *Machine)SetPrefixVar(prefix string){

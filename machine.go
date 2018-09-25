@@ -25,7 +25,7 @@ type Machine interface {
 	//生成模板信息
 	GenerateTmpl(msgType MsgType,data map[string]interface{}) (tpl string,curerr error)
 	//登录机器人
-	Login(data map[string]string) error
+	Login(username,password,loginurl string,datas ...string) error
 
 }
 
